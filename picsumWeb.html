@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script defer src = "https://use.fontawesome.com/releases/v5.0.6/js/all.js"> </script>  -->
+    <script src="https://kit.fontawesome.com/1102000fb5.js" crossorigin="anonymous"></script>
+
+
+
+    <style>
+        img {
+            opacity: 1.0;
+            filter: alpha(opacity=50);
+            /* For IE8 and earlier */
+        }
+
+        /* .toolbar {
+            display: none;
+            top: 0;
+        } */
+
+        /* img:hover+.toolbar {
+            display: block;
+            position: absolute;
+        } */
+
+        .card2 {
+            position: relative;
+        }
+
+        .Download {
+            position: absolute;
+            bottom: 0%;
+            left: 75%;
+            display: none;
+        }
+
+        .Share {
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            display: none;
+        }
+
+        .Like {
+            position: absolute;
+            background: transparent;
+            bottom: 1%;
+            left: 25%;
+            display: none;
+        }
+
+        .card2:hover img {
+            opacity: 0.75;
+        }
+
+        .card2:hover .Download,
+        .card2:hover .Share,
+        .card2:hover .Like {
+            display: inline;
+        }
+
+        .loading {
+            background: transparent url('http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif') center no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <form class="form-inline" action="">
+            <input id="myInput" class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="myFunction()"><i
+                    class="fas fa-search"></i></button>
+        </form>
+    </nav>
+    <br>
+
+
+    <div id="loop" class="card-columns">
+
+        <!-- <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <i class="fas fa-download"></i>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+            </img>
+        </div>
+
+
+        <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div>
+        <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div> -->
+        <!-- <div class="card">
+            <img  class="card-img-top" alt="...">
+            <div class="btn-group toolbar" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="fas fa-download"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-heart"></i></button>
+                <button type="button" class="btn btn-secondary"><i class="fas fa-share-alt"></i></button>
+            </div>
+        </div> -->
+
+    </div>
+
+    <!-- <nav aria-label="Page navigation ">
+        <ul class="pagination justify-content-center pagination-lg">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav> -->
+    <!-- <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li>
+              <a href="javascript:void(0)" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+        </ul>
+      </nav> -->
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li id="previous-page" class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+            <!-- <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li> -->
+        </ul>
+    </nav>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="scriptReq.js"></script>
+
+</html>
